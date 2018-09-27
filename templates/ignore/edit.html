@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>Default</title>
+        {% endif %}
+		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </head>
+    <body>
+        <h1>Hola {{ nombre }}, vamo a editar perro!</h1>
+        
+        <button id="boton">actualizate chango</button>
+        
+        <br>
+        <br>
+
+        <div id="content">
+            <table id="tablaSensores" border='1'>
+                <tr>
+                    <th>Id</th>
+                    <th>Descripción</th>
+                    <th>Valor</th>
+                </tr>
+                <tr>
+                    <td><select class=id></select></td>
+                    <td class="descripcion"></td>
+                    <td ><input class="valor" type="text" name="valor"></td>
+                </tr>
+            </table>
+        </div>
+
+        <script src="{{ url_for('static', filename='jquery-3.3.1.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='socket-io.js') }}"></script>
+        <script src="{{ url_for('static', filename='edit.js') }}"></script>
+        
+    </body>
+</html>

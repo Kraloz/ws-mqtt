@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }}</title>
+        {% else %}
+        <title>Default</title>
+        {% endif %}
+		<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </head>
+    <body>
+        <h1>Hola {{ nombre }}, bienvenido!</h1>
+        
+        <button id="boton">vamo a mandar jsons</button>
+        
+        <br>
+        <br>
+
+        <script src="{{ url_for('static', filename='js/vendor/jquery-3.3.1.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/vendor/socket-io.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/loop.js') }}"></script>
+        
+    </body>
+</html>
